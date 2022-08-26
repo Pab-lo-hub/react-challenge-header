@@ -1,7 +1,20 @@
-import React from "react"
+import React from "react";
+import data from "./../data";
+import Item from "./../components/item"
 
-export default function Table() {
+export default function Table(props) {
+    const items = data.map(item => {
+        return (
+            <Item
+                key={item.nombre}
+                item={item}
+            />
+        )
+    })
     return (
-        <h1>TABLE</h1>
+        <div>
+            <h1>TABLE</h1>
+            {items}
+        </div >
     )
 }
